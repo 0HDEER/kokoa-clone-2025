@@ -2,6 +2,8 @@
     display: flex ;
     justify-content: center ;
     padding: 5px 3px ;
+    position: fixed ;
+    width: 100% ;
 }  /* 여기서 justfy-content: space between을 안쓰는 이유는, 시간이 가운데 오지 않아서이다 */
 
 
@@ -22,6 +24,7 @@
     display: flex ;
     justify-content: flex-end ;
     align-items: center ;
+    
 }
 
 .status-bar__column .fa-battery-full {
