@@ -1,5 +1,5 @@
 .Welcome-header {
-    margin: 90px 0px ;
+    margin-bottom: 90px;
     text-align: center;  /*h1, p등 글자를 center 위해 사용*/
     display: flex ;
     flex-direction: column;
@@ -7,8 +7,9 @@
 }
 
 .Welcome-header__title {
+    margin-top: 90px;
     font-size: 25px ;
-    margin-bottom: 20px ;
+    margin-bottom: 25px ;
 }
 
 .Welcome-header__text {
