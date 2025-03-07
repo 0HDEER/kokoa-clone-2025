@@ -12,8 +12,9 @@
     padding-bottom: 30px;
 }
 
-#chat-screen .status-bar {
-    z-index: 2;
+
+#chat-screen .alt-header {
+    z-index: 1;
     /* 겹쳐서 가려진 경우 사용(숫자가 높을수록 앞으로) */
 }
 
@@ -37,10 +38,35 @@
     margin-bottom: 25px;
 }
 
+@keyframes chatslideleft {
+    from {
+        transform: translateX(-180px) ;
+        opacity: 0;
+    }
+
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@keyframes chatslideright {
+    from {
+        transform: translateX(180px) ;
+        opacity: 0;
+    }
+
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
 .message-row {
     display: flex;
     width:100% ;
     margin-bottom: 25px;
+    animation: chatslideleft 1s ease-in-out ;
 }
 
 .message-row img {
@@ -77,6 +103,9 @@
 
 .message-row--own {
     justify-content: flex-end;
+    transform: translateX(180px);
+    animation: chatslideright 1s ease-in-out forwards ;
+    animation-delay: 0.9s;
 }
 
 .message-row--own .message__info {
@@ -99,7 +128,8 @@
     justify-content: space-between;
     background-color: white;
     width: 100%;
-    padding: 5px 0;
+    padding: 5px 0px;
+    transition: transform 0.3s ease-in-out ;
 }
 
 .reply i {
@@ -109,6 +139,7 @@
 .reply__column:first-child {
     width: 10% ;
     text-align: center;
+
 }
 
 .reply__column:last-child {
@@ -127,6 +158,7 @@
     border: var(--main-border);
     border-radius: 20px;
     padding: 0 7px;
+    transition: transform 0.3s ease-in-out ;
 }
 
 .reply__column:last-child > i,
@@ -155,3 +187,25 @@
 .reply__column button:active {
   outline: none;
 }
+
+.reply .reply__column:first-child,
+.reply .fa-face-smile,
+.reply button {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.reply:focus-within .reply__column i,
+.reply:focus-within .reply__column button {
+    opacity: 0;
+}
+
+
+
+.reply:focus-within .reply__column input {
+    width: 95vw;
+    transform: translateX(-5%) translateY(-50px) ;
+}
+
+.reply:focus-within {
+    transform: translateY(50px);
+  }

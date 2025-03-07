@@ -1,3 +1,15 @@
+@keyframes hiddensplashscreen {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
 #friends-display-link {
     text-align: center ;
     display: block ;
@@ -23,4 +35,20 @@
     display: flex ;
     justify-content: space-between ;
     opacity: 0.5 ;
+}
+
+#splash-screen {
+    background-color: var(--yellow);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 120px;
+    color: #3C1E1E ;
+    animation: hiddensplashscreen 0.3s ease-in-out forwards;
+    animation-delay: 1.5s;
+    z-index: 4;
 }

@@ -12,6 +12,7 @@
 @import "Components/red__dot.css" ;
 @import "Components/icon-row.css" ;
 @import "Components/alt-screen-header.css" ;
+@import "Components/too-big.css" ;
 
 
 /* Screens */
@@ -26,6 +27,7 @@
 body {
     color: #2e363e;
     font-family: "Open Sans", serif;
+    height: 120vh;
 }
 
 .main-screen {
